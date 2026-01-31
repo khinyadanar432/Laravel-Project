@@ -1,0 +1,118 @@
+@import 'tailwindcss';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+/* Modern profile styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+/* FIXED: Ensure proper text color inheritance */
+body {
+    color: #1f2937; /* gray-800 */
+    background-color: #f9fafb; /* gray-50 */
+}
+
+.gradient-bg {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.hover-lift {
+    transition: transform 0.2s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-4px);
+}
+
+.shadow-soft {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+}
+
+.glass-effect {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* FIX: Ensure text is visible in white containers */
+.text-dark {
+    color: #1f2937 !important; /* gray-800 */
+}
+
+.text-medium {
+    color: #4b5563 !important; /* gray-600 */
+}
+
+/* Animation fixes */
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Ensure backdrop blur works */
+.backdrop-blur-sm {
+    backdrop-filter: blur(8px);
+}
+
+/* Scale transitions */
+.hover\:scale-105:hover {
+    transform: scale(1.05);
+}
+
+.hover\:scale-110:hover {
+    transform: scale(1.1);
+}
+
+/* Add this to the BOTTOM of your app.css file */
+
+/* EMERGENCY FIX for white-on-white text */
+.student-profile * {
+    color: #1f2937 !important; /* gray-800 */
+}
+
+/* Or target specific elements */
+.profile-page h1,
+.profile-page h2,
+.profile-page h3,
+.profile-page h4,
+.profile-page p,
+.profile-page span,
+.profile-page div {
+    color: #1f2937 !important;
+}
+
+/* Force all text to be visible */
+.text-force-dark {
+    color: #1f2937 !important;
+}
+
+/* Specifically target the profile content */
+.min-h-screen.bg-gradient-to-b {
+    color: #1f2937 !important;
+}
+
+.min-h-screen.bg-gradient-to-b * {
+    color: inherit !important;
+}
